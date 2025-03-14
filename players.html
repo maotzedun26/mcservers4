@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players - Minecraft Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0; /* Milky white with slight gray */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #333; /* Dark grey */
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background: #444; /* Slightly lighter dark grey */
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #ecf0f1;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1em; /* Smaller font size */
+            padding: 8px 16px; /* Smaller padding */
+            border: 1px solid #555; /* Smaller darker grey border */
+            border-radius: 5px; /* Rounded corners */
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: #555; /* Darker grey background on hover */
+            transform: scale(1.05);
+        }
+        .container {
+            width: 100%;
+            margin: 20px auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the boxes horizontally */
+        }
+        .content {
+            background: #d3d3d3; /* Darker color than the background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center the text */
+            width: 80%; /* Make the boxes take 80% of the container's width */
+            max-width: 600px; /* Set a max width for the boxes */
+            margin: 0 auto; /* Center the content */
+        }
+        .content h2 {
+            margin-top: 0;
+        }
+        .footer {
+            background: #333; /* Dark grey */
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .footer p {
+            margin: 5px 0;
+            transition: color 0.3s ease;
+        }
+        .footer a {
+            color: #555; /* Darker grey */
+            transition: color 0.3s ease;
+        }
+        .footer:hover {
+            background: #444; /* Slightly lighter dark grey */
+            color: #ecf0f1;
+        }
+        .footer:hover p, .footer:hover a {
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Players</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="players.html">Players</a>
+        <a href="teams.html">Teams</a>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h2>Players</h2>
+            <ul>
+                <li>maotzedun26</li>
+                <li>AetherWafer</li>
+                <li>PROMETHESIUS</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Server IP: quite-calculate.gl.joinmc.link</p>
+        <p>Contact us on Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
+    </div>
+</body>
+</html>
