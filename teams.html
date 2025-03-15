@@ -70,15 +70,12 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .footer p {
             margin: 5px 0;
-            transition: color 0.3s ease;
         }
         .footer a {
             color: #555; /* Darker grey */
-            transition: color 0.3s ease;
         }
         .footer:hover {
             background: #444; /* Slightly lighter dark grey */
@@ -86,6 +83,55 @@
         }
         .footer:hover p, .footer:hover a {
             color: #ecf0f1;
+        }
+        .team-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .team-member {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+            background: #d0d0d0;
+        }
+        .player-head {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            image-rendering: pixelated;
+            border-radius: 4px;
+        }
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff2') format('woff2');
+        }
+
+        .clan-name {
+            font-family: 'Minecraft', monospace;
+            color: #FF0000;
+            font-size: 1.4em;
+            text-shadow: 2px 2px #3F3F3F;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .server-ip {
+            font-family: 'Minecraft', monospace;
+            color: #FF0000;
+            font-size: 1.2em;
+            text-shadow: 1px 1px #3F3F3F;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -103,19 +149,28 @@
         <div class="content">
             <h2>Teams</h2>
             <h3>Team 1</h3>
-            <ul>
-                <li>PROMETHESIUS</li>
-                <li>AetherWafer</li>
+            <ul class="team-list">
+                <li class="team-member">
+                    <img src="https://mc-heads.net/avatar/PROMETHESIUS" alt="PROMETHESIUS" class="player-head">
+                    PROMETHESIUS
+                </li>
+                <li class="team-member">
+                    <img src="https://mc-heads.net/avatar/AetherWafer" alt="AetherWafer" class="player-head">
+                    AetherWafer
+                </li>
             </ul>
-            <h3>[MAFIA]</h3>
-            <ul>
-                <li>maotzedun26</li>
+            <h3><span class="clan-name">[MAFIA]</span></h3>
+            <ul class="team-list">
+                <li class="team-member">
+                    <img src="https://mc-heads.net/avatar/maotzedun26" alt="maotzedun26" class="player-head">
+                    maotzedun26
+                </li>
             </ul>
         </div>
     </div>
     <div class="footer">
-        <p>Server IP: quite-calculate.gl.joinmc.link</p>
-        <p>Contact us on Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
+        <p><strong>Server IP:</strong> <span class="server-ip">quite-calculate.gl.joinmc.link</span></p>
+        <p><strong>Contact us on Discord:</strong> <a href="example.com">N/A</a></p>
     </div>
 </body>
 </html>

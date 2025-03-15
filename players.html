@@ -88,6 +88,50 @@
         .footer:hover p, .footer:hover a {
             color: #ecf0f1;
         }
+        .player-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .player-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 10px;
+            width: 200px;
+            background: #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .player-item:hover {
+            transform: scale(1.05);
+            background: #d0d0d0;
+        }
+        .player-head {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+            image-rendering: pixelated;
+            border-radius: 4px;
+        }
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff2') format('woff2');
+        }
+        
+        .server-ip {
+            font-family: 'Minecraft', monospace;
+            color: #FF0000;
+            font-size: 1.2em;
+            text-shadow: 1px 1px #3F3F3F;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -103,16 +147,25 @@
     <div class="container">
         <div class="content">
             <h2>Players</h2>
-            <ul>
-                <li>maotzedun26</li>
-                <li>AetherWafer</li>
-                <li>PROMETHESIUS</li>
+            <ul class="player-list">
+                <li class="player-item">
+                    <img src="https://mc-heads.net/avatar/maotzedun26" alt="maotzedun26" class="player-head">
+                    maotzedun26
+                </li>
+                <li class="player-item">
+                    <img src="https://mc-heads.net/avatar/AetherWafer" alt="AetherWafer" class="player-head">
+                    AetherWafer
+                </li>
+                <li class="player-item">
+                    <img src="https://mc-heads.net/avatar/PROMETHESIUS" alt="PROMETHESIUS" class="player-head">
+                    PROMETHESIUS
+                </li>
             </ul>
         </div>
     </div>
     <div class="footer">
-        <p>Server IP: quite-calculate.gl.joinmc.link</p>
-        <p>Contact us on Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
+        <p><strong>Server IP:</strong> <span class="server-ip">quite-calculate.gl.joinmc.link</span></p>
+        <p><strong>Contact us on Discord:</strong> <a href="example.com">N/A</a></p>
     </div>
 </body>
 </html>

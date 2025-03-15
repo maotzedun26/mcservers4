@@ -22,6 +22,13 @@
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        header h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ecf0f1;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0;
+        }
         nav {
             background: #444; /* Slightly lighter dark grey */
             padding: 10px 0;
@@ -92,22 +99,12 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .footer p {
             margin: 5px 0;
-            transition: color 0.3s ease;
         }
         .footer a {
             color: #555; /* Darker grey */
-            transition: color 0.3s ease;
-        }
-        .footer:hover {
-            background: #444; /* Slightly lighter dark grey */
-            color: #ecf0f1;
-        }
-        .footer:hover p, .footer:hover a {
-            color: #ecf0f1;
         }
         .button {
             display: inline-block;
@@ -124,6 +121,22 @@
         .button:hover {
             background-color: #333; /* Darker grey on hover */
             transform: scale(1.05);
+        }
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        .server-ip {
+            font-family: 'Minecraft', monospace;
+            color: #FF0000;
+            font-size: 1.2em;
+            text-shadow: 1px 1px #3F3F3F;
+            font-weight: bold;
         }
     </style>
     <script>
@@ -180,8 +193,8 @@
         </div>
     </div>
     <div class="footer">
-        <p>Server IP: quite-calculate.gl.joinmc.link</p>
-        <p>Contact us on Discord: <a href="https://discord.gg/yourdiscordlink">Join our Discord</a></p>
+        <p><strong>Server IP:</strong> <span class="server-ip">quite-calculate.gl.joinmc.link [1.12.2]</span></p>
+        <p><strong>Contact us on Discord:</strong> <a href="example.com">N/A</a></p>
     </div>
 </body>
 </html>
