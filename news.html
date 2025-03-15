@@ -114,6 +114,25 @@
             text-shadow: 1px 1px #3F3F3F;
             font-weight: bold;
         }
+        .news-section .image-grid {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .news-section .image-grid img {
+            width: calc(50% - 5px);
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .news-section .image-grid img:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
@@ -132,13 +151,16 @@
             <p>Here will be the detailed news of the server on what's happening recently.</p>
         </div>
         <div class="news-section">
-            <h3>13.3.25 : Rumors say an ancient base as been fount</h3>
-            <p>Today, AetherWafer has stated that he had fount an ancient base deep inside the jungle near Spawn around: 10000, 130, 10000; he stated that "I was wandering around and looked up to see this colossal house on top of a house but i was too scared to climb on top of the huge jungle tree, there might be some good light inside there." </p>
-            <img src="img/13.3.25.png" alt="Image 2">
+            <h3>15.3.25 : Maotzedun26's base griefed</h3>
+            <p>Following PROMETHESIUS's vow of revenge, he and AetherWafer successfully located and griefed Maotzedun26's hidden base. The destruction was extensive, with multiple TNT charges demolishing both the storage system and automated farms.</p>
+            <div class="image-grid">
+                <img src="img/15.3.25 [1].png" alt="Base exterior damage">
+                <img src="img/15.3.25 [2].png" alt="Base interior destruction">
+            </div>
         </div>
         <div class="news-section">
-            <h3>12.3.25 : Assasination plot against PROMETHESIUS</h3>
-            <p>On 12th March 2025 the notorius leader of the MAFIA Clan, Maotzedun26, had successfully assasinated PROMETHESIUS when he had lured him towards a decoy base packed with precisely 36 TNT under the base's floor. Reportedly, the TNT was linked up to a button next to the a Painting where Maotzedun26 promptly stated, "now lets stare at this painting", right after this he had pushed the button which led to the 36 TNT to explode, successfully assasinating PROMETHESIUS</p>
+            <h3>14.3.25 : Assasination plot against PROMETHESIUS</h3>
+            <p>On 14th March 2025 the notorius leader of the MAFIA Clan, Maotzedun26, had successfully assasinated PROMETHESIUS when he had lured him towards a decoy base packed with precisely 36 TNT under the base's floor. Reportedly, the TNT was linked up to a button next to the a Painting where Maotzedun26 promptly stated, "now lets stare at this painting", right after this he had pushed the button which led to the 36 TNT to explode, successfully assasinating PROMETHESIUS</p>
             <img src="img/12.3.25.png" alt="Image 1">
         </div>
     </div>
