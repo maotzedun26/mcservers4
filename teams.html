@@ -1,263 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teams</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #e8f1f8;  /* Light blue-gray */
-            color: #2c3e50;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background: #2c3e50;  /* Dark blue */
-            color: #ecf0f1;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        nav {
-            background: #34495e;  /* Medium blue */
-            padding: 10px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            color: #ecf0f1;
-            margin: 0 10px; /* Reduced margin */
-            text-decoration: none;
-            font-size: 0.9em; /* Smaller font size */
-            padding: 6px 12px; /* Smaller padding */
-            border: 1px solid #3498db;
-            border-radius: 4px; /* Slightly smaller border radius */
-            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-        }
-        nav a:hover {
-            color: #fff;
-            background-color: #3498db;
-            transform: scale(1.05);
-        }
-        .container {
-            width: 100%;
-            margin: 20px auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center the boxes horizontally */
-        }
-        .content {
-            background: rgba(247, 250, 252, 0.9);  /* Very light blue */
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.1);
-            text-align: center; /* Center the text */
-            width: 80%; /* Make the boxes take 80% of the container's width */
-            max-width: 600px; /* Set a max width for the boxes */
-        }
-        .content h2 {
-            margin-top: 0;
-        }
-        .footer {
-            background: #2c3e50;  /* Dark blue */
-            color: #ecf0f1;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 -2px 4px rgba(52, 152, 219, 0.1);
-        }
-        .footer p {
-            margin: 5px 0;
-        }
-        .footer a {
-            color: #3498db;  /* Bright blue */
-        }
-        .footer:hover {
-            background: #34495e;  /* Medium blue */
-            color: #ecf0f1;
-        }
-        .footer:hover p, .footer:hover a {
-            color: #ecf0f1;
-        }
-        .team-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-        .team-member {
-            display: inline-flex;
-            align-items: center;
-            margin: 15px 0;
-            padding: 12px 20px;
-            background: #fff;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            font-weight: 600;
-            font-size: 1.1em;
-            box-shadow: 0 3px 6px rgba(52, 152, 219, 0.15);
-            border-left: 4px solid #3498db;
-            width: auto;  /* Changed from min-width to auto */
-        }
-        .team-member:hover {
-            transform: translateY(-2px);
-            background: #f8fafc;
-            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.2);
-            border-left-width: 6px;
-        }
-        .player-head {
-            width: 36px;
-            height: 36px;
-            margin-right: 15px;
-            image-rendering: pixelated;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff2') format('woff2');
-        }
+    <title>Teams - Maotzedun26's Server</title>
 
-        .clan-name {
-            font-family: 'Minecraft', monospace;
-            color: #c0392b;  /* Dark red for MAFIA */
-            font-size: 2.5em;  /* Made even bigger */
-            text-shadow: 2px 2px rgba(44, 62, 80, 0.3);
-            display: inline-block;
-            margin: 20px 0;
-            font-weight: bold;
-            position: relative;
-            padding-bottom: 15px;
-        }
+    <!-- FavIcon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-        .clan-name::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, #c0392b, #e74c3c);  /* Red gradient for MAFIA */
-            border-radius: 2px;
-        }
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/players.css">
+    <link rel="stylesheet" href="assets/css/teams.css">
 
-        /* MAFIA team specific styles */
-        .clan-name + .team-list .team-member {
-            border-left: 4px solid #c0392b;  /* Red border */
-        }
+    <!-- Bootstrap CSS -->
 
-        .clan-name + .team-list .team-member:hover {
-            box-shadow: 0 6px 12px rgba(192, 57, 43, 0.2);  /* Red shadow */
-            border-left-width: 6px;
-        }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-        /* FIGTRUMS team specific styles */
-        .clan-name.sigma {
-            color: #FF69B4;  /* Pink */
-            font-size: 2.5em;
-        }
+    <!-- Bootstrap Javascript -->
 
-        .clan-name.sigma::after {
-            background: linear-gradient(to right, #FF69B4, #ff99cc);  /* Pink gradient */
-        }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
-        .clan-name.sigma + .team-list .team-member {
-            border-left: 4px solid #FF69B4;  /* Pink border */
-        }
+    <!-- Font Link -->
 
-        .clan-name.sigma + .team-list .team-member:hover {
-            box-shadow: 0 6px 12px rgba(255, 105, 180, 0.2);  /* Pink shadow */
-            border-left-width: 6px;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
-        .server-ip {
-            font-family: 'Minecraft', monospace;
-            color: #FF0000;
-            font-size: 1.2em;
-            text-shadow: 1px 1px #3F3F3F;
-            font-weight: bold;
-        }
+    <!-- Icon Link -->
 
-        .team-member.leader {
-            position: relative;
-        }
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 
-        .team-member.leader::before {
-            content: '👑';
-            position: absolute;
-            top: -10px;  /* Moved slightly closer */
-            left: 45px;
-            font-size: 1em;  /* Reduced from 1.2em */
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            transform: rotate(15deg);  /* Changed from -15deg to 15deg */
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/ffa5fbb4aa.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <h1>Teams</h1>
+
+<body class="">
+
+    <!-- Loader -->
+    <div id="loader" class="loader"></div>
+
+
+    <!-- Navbar Section -->
+
+    <header class="header">
+        <div class="navbar-top">
+            <div class="top-1">
+            </div>
+            <div class="top-2">
+                <h3>🔥 The New Season Has Arrived 🔥</h3>
+            </div>
+            <div class="top-3">
+            </div>
+        </div>
+        <div class="navbar-bottom">
+
+            <button class="menu-btn btn d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive"><ion-icon name="menu-outline"
+                    id="bars"></ion-icon></button>
+
+            <div class="nav-logo">
+                <div class="logo">
+                    <img src="assets/img/Grass_Block.png" alt="">
+                </div>
+                <span class="name">
+                    <a href="index.html">Maotzedun26's Server</a>
+                </span>
+            </div>
+
+            <nav class="nav">
+                <div class=" nav-links offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive"
+                    aria-labelledby="offcanvasResponsiveLabel">
+
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Maotzedun26's Server</h5>
+                        <button type="button" class="close-btn" data-bs-dismiss="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-label="Close"><ion-icon name="close-outline"
+                                id="close"></ion-icon></button>
+                    </div>
+
+                    <ul class="nav-ul offcanvas-body">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="players.html">Players</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="news.html">News</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-icon">
+                    <button id="theme-switch">
+                        <ion-icon name="moon-outline" id="moon"></ion-icon>
+                        <ion-icon name="sunny-outline" id="sun"></ion-icon>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="players.html">Players</a>
-        <a href="teams.html">Teams</a>
-        <a href="news.html">News</a>
-    </nav>
-    <div class="container">
-        <div class="content">
+
+
+    <!-- Teams Section -->
+
+    <section class="teams">
+        <div class="teams-content">
             <h2>Teams</h2>
-            <h3><span class="clan-name">[MAFIA]</span></h3>
-            <ul class="team-list">
-                <li class="team-member leader">
-                    <img src="https://mc-heads.net/avatar/maotzedun26" alt="maotzedun26" class="player-head">
-                    maotzedun26
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/PROMETHESIUS" alt="PROMETHESIUS" class="player-head">
-                    PROMETHEUS_0017
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/AetherWafer" alt="AetherWafer" class="player-head">
-                    AetherWafer
-                </li>
-            </ul>
-            <h3><span class="clan-name sigma">[FIGTRUMS]</span></h3>
-            <ul class="team-list">
-                <li class="team-member leader">
-                    <img src="https://mc-heads.net/avatar/Fighorn" alt="Fighorn" class="player-head">
-                    Fighorn
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/IDKcorey10000" alt="IDKcorey10000" class="player-head">
-                    IDKcorey10000
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/Zombiebro540" alt="Zombiebro540" class="player-head">
-                    Zombiebro540
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/OILYPICKERS" alt="OILYPICKERS" class="player-head">
-                    OILYPICKERS
-                </li>
-                <li class="team-member">
-                    <img src="https://mc-heads.net/avatar/D4RKPuggo" alt="D4RKPuggo" class="player-head">
-                    D4RKPuggo
-                </li>
-            </ul>
+            <div class="mafia-team">
+                <h3>MAFIA</h3>
+                <ul class="team-list">
+                    <li class="team-member leader">
+                        <img src="https://mc-heads.net/avatar/maotzedun26" alt="maotzedun26" class="player-head">
+                        Maotzedun26
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/PROMETHESIUS" alt="PROMETHESIUS" class="player-head">
+                        PROMETHEUS_0017
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/AetherWafer" alt="AetherWafer" class="player-head">
+                        AetherWafer
+                    </li>
+                </ul>
+            </div>
+
+            <div class="figtrums-team">
+                <h3>FIGTRUMS</h3>
+                <ul class="team-list">
+                    <li class="team-member leader">
+                        <img src="https://mc-heads.net/avatar/Fighorn" alt="Fighorn" class="player-head">
+                        Fighorn
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/IDKcorey10000" alt="IDKcorey10000" class="player-head">
+                        IDKcorey10000
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/Zombiebro540" alt="Zombiebro540" class="player-head">
+                        Zombiebro540
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/OILYPICKERS" alt="OILYPICKERS" class="player-head">
+                        OILYPICKERS
+                    </li>
+                    <li class="team-member">
+                        <img src="https://mc-heads.net/avatar/D4RKPuggo" alt="D4RKPuggo" class="player-head">
+                        D4RKPuggo
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Section -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="icons">
+                <i class="fa-brands fa-discord" id="discord"></i>
+                <i class="fa-brands fa-x-twitter" id="x"></i>
+                <i class="fa-brands fa-instagram" id="instagram"></i>
+            </div>
+            <p class="footer-text">
+                &copy; 2025 Maotzedun26's Server. All rights reserved. <br> Designed by Xvoid Technologies.
+            </p>
+        </div>
+    </footer>
+
+
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div class="toast-container position-fixed top-0 end-0 p-3">
         </div>
     </div>
-    <div class="footer">
-        <p><strong>Server IP:</strong> <span class="server-ip">quite-calculate.gl.joinmc.link [1.20.1]</span></p>
-        <p><strong>Contact us on Discord:</strong> <a href="example.com">N/A</a></p>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Javascript -->
+
+    <script src="assets/javascript/loader.js"></script>
+    <script src="assets/javascript/darkmode.js"></script>
+    <script src="assets/javascript/players.js"></script>
+    <script src="assets/javascript/scroll-func.js"></script>
+
 </body>
+
 </html>
